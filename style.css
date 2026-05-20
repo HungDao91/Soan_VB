@@ -600,3 +600,87 @@ body {
  
 .footer a:hover { text-decoration: underline; }
  
+/* ─── Navigation Row (Back / Next) ──────────────────── */
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  gap: 8px;
+}
+ 
+.nav-back {
+  color: var(--text-secondary);
+}
+ 
+.nav-back:disabled {
+  opacity: .25;
+  cursor: default;
+}
+ 
+.nav-next:disabled {
+  opacity: .35;
+  cursor: default;
+}
+ 
+/* ─── Find type: clickable but un-highlighted spans ─── */
+.err-clickable {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 1px 4px;
+  transition: background .15s;
+  /* No color — looks like regular text */
+}
+ 
+.err-clickable:hover {
+  background: var(--bg-warning);
+  color: var(--text-warning);
+}
+ 
+/* ─── Result screen extras ───────────────────────────── */
+.result-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ 
+.result-pct {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: .25rem;
+}
+ 
+.result-credit {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-hint);
+  line-height: 1.7;
+  padding: 1rem 0 .5rem;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1rem;
+}
+ 
+.result-actions {
+  justify-content: center;
+}
+ 
+.btn-share {
+  background: var(--bg-info);
+  color: var(--text-info);
+  border-color: var(--border-info);
+}
+ 
+.btn-share:hover { opacity: .85; }
+ 
+/* Share status feedback line */
+.share-status {
+  text-align: center;
+  font-size: 13px;
+  margin-top: .75rem;
+  min-height: 1.5em;
+}
+ 
+.share-status.ok  { color: var(--text-success); }
+.share-status.err { color: var(--text-danger); }
