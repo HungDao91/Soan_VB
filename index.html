@@ -1,91 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Game luyện tập văn bản hành chính</title>
-
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <!-- ── SEO & Social ───────────────────────────────── -->
+  <title>Soạn thảo Văn bản Hành chính – Game Thực hành</title>
+  <meta name="description" content="Game giả lập thực hành soạn thảo văn bản hành chính: văn phong, ngôn ngữ, chính tả. Dành cho sinh viên môn Xây dựng và Ban hành Văn bản, Trường ĐH Kinh tế – Luật ĐHQG TP.HCM.">
+  <meta name="author" content="Trường ĐH Kinh tế – Luật, ĐHQG TP.HCM">
+ 
+  <!-- Open Graph (hiển thị đẹp khi share lên mạng xã hội) -->
+  <meta property="og:title"       content="Game: Soạn thảo Văn bản Hành chính">
+  <meta property="og:description" content="Thực hành văn phong và ngôn ngữ hành chính qua 22 câu hỏi tương tác.">
+  <meta property="og:type"        content="website">
+ 
+  <!-- ── Fonts ─────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+ 
+  <!-- ── Stylesheet ────────────────────────────────── -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
+ 
 <body>
-  <div class="app">
-    <header>
-      <div class="top-bar">
-        <span id="questionCounter">Câu hỏi 1/6</span>
-        <span id="scoreText">Điểm: 0</span>
-      </div>
-
-      <div class="progress-wrapper">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
+  <div class="wrapper">
+ 
+    <!-- ── Page Header ──────────────────────────────── -->
+    <header class="header">
+      <div class="header-icon" aria-hidden="true">📋</div>
+      <h1>Soạn thảo Văn bản Hành chính</h1>
+      <p>Game thực hành – Chương 3: Văn phong và Ngôn ngữ hành chính</p>
     </header>
-
-    <main id="gameScreen" class="card">
-      <h1>Game luyện tập văn bản hành chính</h1>
-
-      <p id="questionText" class="question">
-        Nội dung câu hỏi sẽ hiển thị ở đây.
-      </p>
-
-      <div id="answerBox" class="answers"></div>
-
-      <button id="nextBtn" class="btn" disabled>
-        Câu tiếp theo
-      </button>
-    </main>
-
-    <section id="resultScreen" class="card hidden">
-      <p class="small-title">Tổng điểm</p>
-
-      <div class="final-score">
-        <span id="finalScore">0</span><span>/90</span>
+ 
+    <!-- ── HUD: progress + score ────────────────────── -->
+    <div class="hud" role="status" aria-live="polite">
+      <div class="hud-block">
+        <div class="hud-label">Câu hỏi</div>
+        <div class="hud-value" id="qc">1<small>/22</small></div>
       </div>
-
-      <div id="resultMessage" class="message">
-        Cần thực hành thêm
+ 
+      <div class="dots" id="dots" aria-hidden="true"></div>
+ 
+      <div class="hud-block">
+        <div class="hud-label">Điểm</div>
+        <div class="hud-value" id="sv">0</div>
       </div>
-
-      <div class="score-list">
-        <div>
-          <span>Tính khách quan</span>
-          <strong id="score1">0/10 điểm</strong>
-        </div>
-
-        <div>
-          <span>Tính ngắn gọn – chính xác</span>
-          <strong id="score2">0/15 điểm</strong>
-        </div>
-
-        <div>
-          <span>Tính trang trọng – lịch sự</span>
-          <strong id="score3">0/10 điểm</strong>
-        </div>
-
-        <div>
-          <span>Tính phổ thông đại chúng</span>
-          <strong id="score4">0/20 điểm</strong>
-        </div>
-
-        <div>
-          <span>Kỹ thuật cú pháp – câu</span>
-          <strong id="score5">0/10 điểm</strong>
-        </div>
-
-        <div>
-          <span>Tổng hợp – Cứu văn bản</span>
-          <strong id="score6">0/25 điểm</strong>
-        </div>
+    </div>
+ 
+    <!-- ── Progress bar ─────────────────────────────── -->
+    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="progress-fill" id="pb"></div>
+    </div>
+ 
+    <!-- ── Question area (rendered by JS) ───────────── -->
+    <main id="qa"></main>
+ 
+    <!-- ── Page Footer ──────────────────────────────── -->
+    <footer class="footer">
+      <div>Môn học: Xây dựng và Ban hành Văn bản &mdash; Chương 3</div>
+      <div>
+        <a href="https://www.uel.edu.vn" target="_blank" rel="noopener">
+          Trường ĐH Kinh tế – Luật, ĐHQG TP.HCM
+        </a>
       </div>
-
-      <button id="restartBtn" class="btn secondary">
-        Chơi lại từ đầu
-      </button>
-    </section>
-  </div>
-
+    </footer>
+ 
+  </div><!-- /.wrapper -->
+ 
+  <!-- ── Game Logic ────────────────────────────────── -->
   <script src="script.js"></script>
 </body>
 </html>
+ 
