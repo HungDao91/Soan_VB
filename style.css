@@ -3,7 +3,7 @@
    Môn: Xây dựng và Ban hành Văn bản
    Trường ĐH Kinh tế – Luật, ĐHQG TP.HCM
    ===================================================== */
- 
+
 /* ─── Design Tokens ─────────────────────────────────── */
 :root {
   --bg-page:       #F4F1EC;
@@ -13,7 +13,7 @@
   --bg-danger:     #FDECEC;
   --bg-info:       #E6F1FB;
   --bg-warning:    #FFF6E0;
- 
+
   --text-primary:   #1A1A1A;
   --text-secondary: #6B6560;
   --text-hint:      #9C958E;
@@ -21,23 +21,23 @@
   --text-danger:    #993333;
   --text-info:      #185FA5;
   --text-warning:   #7A5A0B;
- 
+
   --border-light:   rgba(0, 0, 0, 0.08);
   --border-mid:     rgba(0, 0, 0, 0.15);
   --border-success: #A3D9A3;
   --border-danger:  #F0AAAA;
   --border-info:    #85B7EB;
   --border-warning: #F0D080;
- 
+
   --accent:       #B85042;
   --accent-light: #FAECE7;
   --accent-text:  #712B13;
- 
+
   --radius:    10px;
   --radius-lg: 14px;
   --font: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
 }
- 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-page:       #1A1816;
@@ -47,7 +47,7 @@
     --bg-danger:     #2E1A1A;
     --bg-info:       #1A2440;
     --bg-warning:    #2E2510;
- 
+
     --text-primary:   #E8E4DF;
     --text-secondary: #A09890;
     --text-hint:      #706860;
@@ -55,27 +55,27 @@
     --text-danger:    #F09595;
     --text-info:      #85B7EB;
     --text-warning:   #F0C860;
- 
+
     --border-light:   rgba(255, 255, 255, 0.08);
     --border-mid:     rgba(255, 255, 255, 0.15);
     --border-success: #3A6B3A;
     --border-danger:  #6B3333;
     --border-info:    #2A4A70;
     --border-warning: #6B5020;
- 
+
     --accent:       #D8785A;
     --accent-light: #3A2520;
     --accent-text:  #F0997B;
   }
 }
- 
+
 /* ─── Reset & Base ───────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
- 
+
 body {
   font-family: var(--font);
   background: var(--bg-page);
@@ -83,14 +83,14 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
- 
+
 /* ─── Layout ─────────────────────────────────────────── */
 .wrapper {
   max-width: 720px;
   margin: 0 auto;
   padding: 1.5rem 1rem 3rem;
 }
- 
+
 /* ─── Page Header ────────────────────────────────────── */
 .header {
   text-align: center;
@@ -98,7 +98,7 @@ body {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border-light);
 }
- 
+
 .header-icon {
   display: inline-flex;
   align-items: center;
@@ -111,19 +111,19 @@ body {
   font-size: 26px;
   margin-bottom: .75rem;
 }
- 
+
 .header h1 {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: .3rem;
 }
- 
+
 .header p {
   font-size: 13px;
   color: var(--text-secondary);
 }
- 
+
 /* ─── HUD ────────────────────────────────────────────── */
 .hud {
   display: flex;
@@ -135,11 +135,11 @@ body {
   padding: .875rem 1.25rem;
   margin-bottom: 1rem;
 }
- 
+
 .hud-block {
   text-align: center;
 }
- 
+
 .hud-label {
   font-size: 11px;
   color: var(--text-hint);
@@ -147,19 +147,19 @@ body {
   letter-spacing: .04em;
   font-weight: 500;
 }
- 
+
 .hud-value {
   font-size: 22px;
   font-weight: 700;
   margin-top: 2px;
 }
- 
+
 .hud-value small {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-secondary);
 }
- 
+
 /* ─── Dots ───────────────────────────────────────────── */
 .dots {
   display: flex;
@@ -168,7 +168,7 @@ body {
   max-width: 220px;
   justify-content: center;
 }
- 
+
 .dot {
   width: 8px;
   height: 8px;
@@ -177,10 +177,10 @@ body {
   border: 1px solid var(--border-mid);
   transition: all .25s;
 }
- 
+
 .dot.done { background: var(--bg-success); border-color: var(--border-success); }
 .dot.cur  { background: var(--accent);     border-color: var(--accent); }
- 
+
 /* ─── Progress Bar ───────────────────────────────────── */
 .progress {
   height: 4px;
@@ -189,14 +189,14 @@ body {
   margin-bottom: 1.25rem;
   overflow: hidden;
 }
- 
+
 .progress-fill {
   height: 100%;
   background: var(--accent);
   border-radius: 2px;
   transition: width .4s ease;
 }
- 
+
 /* ─── Question Card ──────────────────────────────────── */
 .card {
   background: var(--bg-card);
@@ -205,7 +205,7 @@ body {
   padding: 1.5rem;
   margin-bottom: 1rem;
 }
- 
+
 /* ─── Pills ──────────────────────────────────────────── */
 .pills {
   display: flex;
@@ -213,7 +213,7 @@ body {
   gap: 6px;
   margin-bottom: .75rem;
 }
- 
+
 .pill {
   display: inline-block;
   font-size: 11px;
@@ -222,24 +222,24 @@ body {
   border-radius: 99px;
   letter-spacing: .02em;
 }
- 
+
 .pill.sec { background: var(--bg-info);      color: var(--text-info); }
 .pill.tag { background: var(--accent-light); color: var(--accent-text); }
- 
+
 /* ─── Question Text ──────────────────────────────────── */
 .q-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: .35rem;
 }
- 
+
 .q-desc {
   font-size: 14px;
   color: var(--text-secondary);
   line-height: 1.65;
   margin-bottom: 1.25rem;
 }
- 
+
 /* ─── Document Box ───────────────────────────────────── */
 .doc-box {
   background: var(--bg-surface);
@@ -251,7 +251,7 @@ body {
   margin-bottom: 1rem;
   white-space: pre-wrap;
 }
- 
+
 .doc-box .doc-label {
   display: block;
   font-size: 11px;
@@ -260,49 +260,52 @@ body {
   letter-spacing: .04em;
   margin-bottom: 8px;
 }
- 
+
 .doc-box .doc-label.bad  { color: var(--text-danger); }
 .doc-box .doc-label.good { color: var(--text-success); }
 .doc-box .doc-label.ref  { color: var(--text-info); }
- 
+
 .doc-box.model {
   border-left: 3px solid var(--border-success);
 }
- 
+
 /* ─── Error Spans (find-errors type) ────────────────── */
 .err-span {
-  background: var(--bg-danger);
-  color: var(--text-danger);
+  background: transparent;
+  color: inherit;
   border-radius: 4px;
-  padding: 1px 4px;
+  padding: 1px 2px;
   cursor: pointer;
-  border-bottom: 2px dashed var(--border-danger);
-  transition: opacity .2s;
+  border-bottom: 1px dotted transparent;
+  transition: background .15s, border-color .15s, color .15s;
 }
- 
-.err-span:hover { opacity: .75; }
- 
+
+.err-span:hover {
+  background: var(--bg-surface);
+  border-bottom-color: var(--border-mid);
+}
+
 .err-span.found {
   background: var(--bg-success);
   color: var(--text-success);
   border-bottom-color: var(--border-success);
   text-decoration: line-through;
 }
- 
+
 /* ─── MCQ Options ────────────────────────────────────── */
 .opts {
   display: grid;
   gap: 8px;
   margin-bottom: 1rem;
 }
- 
+
 .opts.c2 { grid-template-columns: 1fr 1fr; }
 .opts.c1 { grid-template-columns: 1fr; }
- 
+
 @media (max-width: 560px) {
   .opts.c2 { grid-template-columns: 1fr; }
 }
- 
+
 .opt-btn {
   background: var(--bg-card);
   border: 1px solid var(--border-mid);
@@ -316,13 +319,13 @@ body {
   font-family: var(--font);
   transition: background .15s, border-color .15s;
 }
- 
+
 .opt-btn:hover { background: var(--bg-surface); border-color: var(--accent); }
 .opt-btn.ok    { background: var(--bg-success); border-color: var(--border-success); color: var(--text-success); }
 .opt-btn.no    { background: var(--bg-danger);  border-color: var(--border-danger);  color: var(--text-danger); }
 .opt-btn.rv    { background: var(--bg-success); border-color: var(--border-success); color: var(--text-success); opacity: .5; }
 .opt-btn:disabled { cursor: default; }
- 
+
 /* ─── Rewrite Textarea ───────────────────────────────── */
 .rw-area {
   width: 100%;
@@ -338,10 +341,10 @@ body {
   resize: vertical;
   margin-bottom: .75rem;
 }
- 
+
 .rw-area:focus { outline: none; border-color: var(--accent); }
 .rw-area::placeholder { color: var(--text-hint); }
- 
+
 /* ─── Feedback Box ───────────────────────────────────── */
 .fb-box {
   border-radius: var(--radius);
@@ -352,11 +355,11 @@ body {
   margin-bottom: .75rem;
   display: none;
 }
- 
+
 .fb-box.s { display: block; background: var(--bg-success); color: var(--text-success); border: 1px solid var(--border-success); }
 .fb-box.e { display: block; background: var(--bg-danger);  color: var(--text-danger);  border: 1px solid var(--border-danger); }
 .fb-box.i { display: block; background: var(--bg-info);    color: var(--text-info);    border: 1px solid var(--border-info); }
- 
+
 /* ─── Buttons ────────────────────────────────────────── */
 .btn-row {
   display: flex;
@@ -364,7 +367,7 @@ body {
   flex-wrap: wrap;
   margin-top: .5rem;
 }
- 
+
 .btn {
   padding: 9px 20px;
   border-radius: var(--radius);
@@ -377,12 +380,12 @@ body {
   font-family: var(--font);
   transition: background .15s, opacity .15s;
 }
- 
+
 .btn:hover    { background: var(--bg-surface); }
 .btn.primary  { background: var(--accent); border-color: var(--accent); color: #fff; }
 .btn.primary:hover { opacity: .88; }
 .btn:disabled { opacity: .35; cursor: default; }
- 
+
 /* ─── Replace Table ──────────────────────────────────── */
 .mtbl {
   width: 100%;
@@ -390,7 +393,7 @@ body {
   font-size: 13px;
   margin-bottom: 1rem;
 }
- 
+
 .mtbl th {
   text-align: left;
   padding: 10px 12px;
@@ -402,18 +405,18 @@ body {
   letter-spacing: .04em;
   border-bottom: 1px solid var(--border-light);
 }
- 
+
 .mtbl td {
   padding: 10px 12px;
   border-bottom: 1px solid var(--border-light);
   vertical-align: middle;
 }
- 
+
 .mtbl td:first-child {
   color: var(--text-danger);
   text-decoration: line-through;
 }
- 
+
 /* ─── Gap Slots ──────────────────────────────────────── */
 .gap-slot {
   display: inline-block;
@@ -429,11 +432,11 @@ body {
   cursor: pointer;
   transition: all .2s;
 }
- 
+
 .gap-slot:hover   { border-style: solid; }
 .gap-slot.active  { outline: 2px solid var(--accent); outline-offset: 2px; }
 .gap-slot.filled  { background: var(--bg-success); color: var(--text-success); border: 1px solid var(--border-success); cursor: default; }
- 
+
 /* ─── Answer Chips ───────────────────────────────────── */
 .chips {
   display: flex;
@@ -441,7 +444,7 @@ body {
   gap: 6px;
   margin-bottom: 1rem;
 }
- 
+
 .chip {
   padding: 5px 14px;
   border-radius: 99px;
@@ -453,11 +456,11 @@ body {
   font-family: var(--font);
   transition: background .15s, border-color .15s;
 }
- 
+
 .chip:hover { background: var(--bg-surface); border-color: var(--accent); }
 .chip.used  { opacity: .3; cursor: default; }
 .chip.wrong { background: var(--bg-danger); color: var(--text-danger); border-color: var(--border-danger); }
- 
+
 /* ─── Match Select ───────────────────────────────────── */
 .match-sel {
   padding: 7px 10px;
@@ -470,12 +473,12 @@ body {
   cursor: pointer;
   min-width: 150px;
 }
- 
+
 .match-sel:focus  { outline: none; border-color: var(--accent); }
 .match-sel.ok     { background: var(--bg-success); color: var(--text-success); border-color: var(--border-success); }
 .match-sel.no     { background: var(--bg-danger);  color: var(--text-danger);  border-color: var(--border-danger); }
 .match-sel.show   { background: var(--bg-info);    color: var(--text-info);    border-color: var(--border-info); }
- 
+
 /* ─── Order Select ───────────────────────────────────── */
 .order-row {
   display: flex;
@@ -483,7 +486,7 @@ body {
   gap: 10px;
   margin-bottom: 10px;
 }
- 
+
 .order-sel {
   flex-shrink: 0;
   width: 48px;
@@ -498,50 +501,50 @@ body {
   font-family: var(--font);
   cursor: pointer;
 }
- 
+
 .order-sel:focus { outline: none; border-color: var(--accent); }
 .order-sel.ok    { background: var(--bg-success); color: var(--text-success); border-color: var(--border-success); }
 .order-sel.no    { background: var(--bg-danger);  color: var(--text-danger);  border-color: var(--border-danger); }
 .order-sel.show  { background: var(--bg-info);    color: var(--text-info);    border-color: var(--border-info); }
- 
+
 .order-txt {
   font-size: 14px;
   line-height: 1.6;
   padding-top: 6px;
 }
- 
+
 /* ─── Hint Line ──────────────────────────────────────── */
 .hint-line {
   font-size: 12px;
   color: var(--text-hint);
   margin-top: 6px;
 }
- 
+
 /* ─── Result Screen ──────────────────────────────────── */
 .result {
   text-align: center;
   padding: 2rem 1rem;
 }
- 
+
 .result-score {
   font-size: 52px;
   font-weight: 700;
   letter-spacing: -0.03em;
   margin-bottom: .25rem;
 }
- 
+
 .result-score small {
   font-size: 22px;
   font-weight: 500;
   color: var(--text-secondary);
 }
- 
+
 .result-total-label {
   font-size: 13px;
   color: var(--text-secondary);
   margin-bottom: .5rem;
 }
- 
+
 .result-rank {
   font-size: 16px;
   font-weight: 600;
@@ -550,18 +553,18 @@ body {
   display: inline-block;
   margin: 1rem 0 1.5rem;
 }
- 
+
 .result-rank.excellent { background: var(--bg-success); color: var(--text-success); }
 .result-rank.good      { background: var(--bg-info);    color: var(--text-info); }
 .result-rank.fair      { background: var(--bg-warning); color: var(--text-warning); }
 .result-rank.poor      { background: var(--bg-danger);  color: var(--text-danger); }
- 
+
 /* ─── Breakdown Table ────────────────────────────────── */
 .breakdown {
   text-align: left;
   margin-bottom: 1.5rem;
 }
- 
+
 .bd-section {
   font-size: 11px;
   font-weight: 700;
@@ -570,7 +573,7 @@ body {
   text-transform: uppercase;
   padding: 12px 0 4px;
 }
- 
+
 .bd-row {
   display: flex;
   justify-content: space-between;
@@ -579,11 +582,11 @@ body {
   border-bottom: 1px solid var(--border-light);
   font-size: 13px;
 }
- 
+
 .bd-row:last-child { border-bottom: none; }
 .bd-row .label { color: var(--text-secondary); }
 .bd-row .pts   { font-weight: 600; }
- 
+
 /* ─── Page Footer ────────────────────────────────────── */
 .footer {
   text-align: center;
@@ -592,95 +595,23 @@ body {
   color: var(--text-hint);
   line-height: 1.8;
 }
- 
+
 .footer a {
   color: var(--text-info);
   text-decoration: none;
 }
- 
+
 .footer a:hover { text-decoration: underline; }
- 
-/* ─── Navigation Row (Back / Next) ──────────────────── */
-.nav-row {
-  display: flex;
+
+
+/* ─── Per-question Navigation ───────────────────────── */
+.q-nav {
   justify-content: space-between;
-  align-items: center;
-  margin-top: 1.25rem;
-  padding-top: 1rem;
+  padding-top: .75rem;
+  margin-top: 1rem;
   border-top: 1px solid var(--border-light);
-  gap: 8px;
 }
- 
-.nav-back {
-  color: var(--text-secondary);
+
+.result-actions .btn {
+  margin-bottom: 6px;
 }
- 
-.nav-back:disabled {
-  opacity: .25;
-  cursor: default;
-}
- 
-.nav-next:disabled {
-  opacity: .35;
-  cursor: default;
-}
- 
-/* ─── Find type: clickable but un-highlighted spans ─── */
-.err-clickable {
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 1px 4px;
-  transition: background .15s;
-  /* No color — looks like regular text */
-}
- 
-.err-clickable:hover {
-  background: var(--bg-warning);
-  color: var(--text-warning);
-}
- 
-/* ─── Result screen extras ───────────────────────────── */
-.result-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
- 
-.result-pct {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: .25rem;
-}
- 
-.result-credit {
-  text-align: center;
-  font-size: 12px;
-  color: var(--text-hint);
-  line-height: 1.7;
-  padding: 1rem 0 .5rem;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-  margin-bottom: 1rem;
-}
- 
-.result-actions {
-  justify-content: center;
-}
- 
-.btn-share {
-  background: var(--bg-info);
-  color: var(--text-info);
-  border-color: var(--border-info);
-}
- 
-.btn-share:hover { opacity: .85; }
- 
-/* Share status feedback line */
-.share-status {
-  text-align: center;
-  font-size: 13px;
-  margin-top: .75rem;
-  min-height: 1.5em;
-}
- 
-.share-status.ok  { color: var(--text-success); }
-.share-status.err { color: var(--text-danger); }
