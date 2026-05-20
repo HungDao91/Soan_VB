@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Game luyện tập văn bản hành chính</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header>
+      <div class="top-bar">
+        <span id="questionCounter">Câu hỏi 1/6</span>
+        <span id="scoreText">Điểm: 0</span>
+      </div>
+
+      <div class="progress-wrapper">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </header>
+
+    <main id="gameScreen" class="card">
+      <h1>Game luyện tập văn bản hành chính</h1>
+
+      <p id="questionText" class="question">
+        Nội dung câu hỏi sẽ hiển thị ở đây.
+      </p>
+
+      <div id="answerBox" class="answers"></div>
+
+      <button id="nextBtn" class="btn" disabled>
+        Câu tiếp theo
+      </button>
+    </main>
+
+    <section id="resultScreen" class="card hidden">
+      <p class="small-title">Tổng điểm</p>
+
+      <div class="final-score">
+        <span id="finalScore">0</span><span>/90</span>
+      </div>
+
+      <div id="resultMessage" class="message">
+        Cần thực hành thêm
+      </div>
+
+      <div class="score-list">
+        <div>
+          <span>Tính khách quan</span>
+          <strong id="score1">0/10 điểm</strong>
+        </div>
+
+        <div>
+          <span>Tính ngắn gọn – chính xác</span>
+          <strong id="score2">0/15 điểm</strong>
+        </div>
+
+        <div>
+          <span>Tính trang trọng – lịch sự</span>
+          <strong id="score3">0/10 điểm</strong>
+        </div>
+
+        <div>
+          <span>Tính phổ thông đại chúng</span>
+          <strong id="score4">0/20 điểm</strong>
+        </div>
+
+        <div>
+          <span>Kỹ thuật cú pháp – câu</span>
+          <strong id="score5">0/10 điểm</strong>
+        </div>
+
+        <div>
+          <span>Tổng hợp – Cứu văn bản</span>
+          <strong id="score6">0/25 điểm</strong>
+        </div>
+      </div>
+
+      <button id="restartBtn" class="btn secondary">
+        Chơi lại từ đầu
+      </button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
